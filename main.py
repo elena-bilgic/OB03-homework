@@ -70,6 +70,6 @@ class Vet():
 
 zoo_keeper = ZooKeeper("Shane")
 vet = Vet("James")
-zoo_keeper.feed_animal(animals[0])
-vet.heal_animal(animals[0])
+zoo_keeper.feed_animal(animals[1])
+vet.heal_animal(animals[2])
 
