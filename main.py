@@ -37,24 +37,25 @@ def animal_sound(animals):
     for animal in animals:
         animal.make_sound()
 
-animals = [Mammal("Lion", "10", "Feline"), Bird("Sparrow", "5", "small"), Reptile("Cobra", "7", "Yellow")]
-animal_sound(animals)
 
 class Zoo():
+    def __init__(self):
+        self.animals = []
+        self.employees = []
+
     def add_animal(self, animal):
-        print(f"{animal.name} added to the zoo")
+        self.animals.append(animal)
+        print(f"{animal.name} was added to the zoo")
 
     def add_employee(self, employee):
-        print(f"{employee.name} added to the zoo staff")
+        self.employees.append(employee)
+        print(f"{employee.name} was added to the zoo staff")
 
 class Employee():
-    def __init__(self, name):
+    def __init__(self, name, job_title):
         self.name = name
+        self.job_title = job_title
 
-employee = Employee("John")
-zoo = Zoo()
-zoo.add_animal(animals[0])
-zoo.add_employee(employee)
 
 class ZooKeeper():
     def __init__(self, name):
@@ -67,6 +68,15 @@ class Vet():
         self.name = name
     def heal_animal(self, animal):
         print(f"{animal.name} is being healed by {self.name} the Vet")
+
+
+animals = [Mammal("Lion", "10", "Feline"), Bird("Sparrow", "5", "small"), Reptile("Cobra", "7", "Yellow")]
+animal_sound(animals)
+
+employee = Employee("John", ZooKeeper)
+zoo = Zoo()
+zoo.add_animal(animals[0])
+zoo.add_employee(employee)
 
 zoo_keeper = ZooKeeper("Shane")
 vet = Vet("James")
